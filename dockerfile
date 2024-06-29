@@ -13,5 +13,8 @@ RUN a2enmod rewrite
 # Configurar permisos para el directorio de Apache
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
+# Establecer el archivo .htaccess
+COPY .htaccess /var/www/html/
+
 # Exponer el puerto 80 para el servidor web
 EXPOSE 80
